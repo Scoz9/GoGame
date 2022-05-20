@@ -1,2 +1,3 @@
 # GameName
-first free-game project 
+First free-game project, we have to define multiple points. Waiting Michelino to do that! 
+
