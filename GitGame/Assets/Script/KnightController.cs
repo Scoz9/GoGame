@@ -2,9 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/* We have to fix the bug that consist in: when the player jumps and at the end falls in the ground, he goes a bit more down respect the ground */
-// Inserire la variabile per l'animator grounded 
-//if grounded = false saltando diventa true e passiamo allo stato idle 
 public class KnightController : MonoBehaviour
 {
     private Rigidbody2D rb; 
@@ -50,9 +47,9 @@ public class KnightController : MonoBehaviour
 
     public void KnightMovementRL(float moveInput){
         if(moveInput > 0){
-            transform.eulerAngles = new Vector3(0,0,0);
+            transform.eulerAngles = new Vector3(0,0,0); //cavaliere guarda a destra
         } else if(moveInput < 0){
-            transform.eulerAngles = new Vector3(0,180,0); 
+            transform.eulerAngles = new Vector3(0,180,0); //cavaliere guarda a sinistra
         }
     }
 
@@ -66,18 +63,18 @@ public class KnightController : MonoBehaviour
             rb.velocity = Vector2.up * jumpForce;
         }
 
-        //Se il player sta saltando ed lo spazio è premuto, coltinuerà a saltare per il tempo assegnato 
+        //Se il player sta saltando ed lo spazio è premuto, continuerà a saltare per il tempo assegnato 
         if(Input.GetKey(KeyCode.Space) && isJumping == true){
             if(jumpTimeCounter > 0){
                 rb.velocity = Vector2.up * jumpForce;
                 jumpTimeCounter -= Time.deltaTime;
             }
-            else {
+            else { //mette a false dopo aver superato il limite di tempo
                 isJumping = false;
             }
         }
 
-        if(Input.GetKeyUp(KeyCode.Space)){
+        if(Input.GetKeyUp(KeyCode.Space)){  //si attiva se lascio "space" prima della fine del tempo
             isJumping = false;
         }
     }
