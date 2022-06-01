@@ -56,7 +56,7 @@ public class KnightController : MonoBehaviour
     public void KinghtJump(){
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
 
-        //Se il playr è sul pavimento e viene cliccato lo space -> isJumping(sta saltando) ... 
+        //Se il player è sul pavimento e viene cliccato lo space -> isJumping(sta saltando) ... 
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded == true ){
             isJumping = true;
             jumpTimeCounter = jumpTime;
