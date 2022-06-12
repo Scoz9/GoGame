@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -61,6 +62,7 @@ public class KnightController : MonoBehaviour
             isJumping = true;
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * jumpForce;
+            AudioManager.instance.Play("FirstJump");
         }
 
         //Se il player sta saltando ed lo spazio è premuto, continuerà a saltare per il tempo assegnato 

@@ -9,6 +9,7 @@ public class Coin : MonoBehaviour
         if(collision.transform.tag == "Player")
         {
             PlayerManager.numberOfCoins++;
+            AudioManager.instance.Play("Coins");
             PlayerPrefs.SetInt("NumberOfCoins", PlayerManager.numberOfCoins);
             Destroy(gameObject);
         }
