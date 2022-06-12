@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enemy_Sideways : MonoBehaviour
 {
-
     //[SerializeField] private float damage;
     [SerializeField] private float speed;
     [SerializeField] private float range;

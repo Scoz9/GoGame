@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4776176542103556635}
   - component: {fileID: 4776176542103556636}
-  - component: {fileID: 4776176542103556637}
   - component: {fileID: 4776176542103556634}
   - component: {fileID: 4776176542103556633}
+  - component: {fileID: 1225273881}
   m_Layer: 0
   m_Name: Mace
   m_TagString: Enemy
@@ -85,20 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4776176542103556637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4776176542103556638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f9478a60273e6c2c97b394a8991a31c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
-  range: 5
 --- !u!95 &4776176542103556634
 Animator:
   serializedVersion: 3
@@ -144,3 +130,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1821058, y: 1.2066102}
   m_EdgeRadius: 0
+--- !u!114 &1225273881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4776176542103556638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df97d3afa07c7d69282f3bb9cd971a75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  range: 5
