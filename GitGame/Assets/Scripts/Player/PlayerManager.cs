@@ -1,3 +1,4 @@
+using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject gameOverScreen;
     public static int numberOfCoins;
     public TextMeshProUGUI coinsText;
+    public GameObject pauseMenuScreen;
     public void Awake()
     {
         numberOfCoins = PlayerPrefs.GetInt("NumberOfCoins", 0);
@@ -30,5 +32,22 @@ public class PlayerManager : MonoBehaviour
     public void ReplayLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+        pauseMenuScreen.SetActive(true);
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        pauseMenuScreen.SetActive(false);
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
