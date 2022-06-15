@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4299583011809908569}
   - component: {fileID: 529912887}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SawPivot
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 4299583012611581106}
   - component: {fileID: 4299583012611581107}
   - component: {fileID: 4299583012611581116}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Saw
   m_TagString: Enemy
   m_Icon: {fileID: 0}

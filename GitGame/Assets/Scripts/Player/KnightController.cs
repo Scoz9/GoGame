@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -40,10 +41,12 @@ public class KnightController : MonoBehaviour
         
         KnightMovementRL(moveInput);
         KinghtJump();
+        //KnightSlide();
         
         //Set animator parameters
         anim.SetBool("run", moveInput != 0);
         anim.SetBool("grounded", !isJumping);
+        //anim.SetBool("slide", )
     }
 
     public void KnightMovementRL(float moveInput){
@@ -71,9 +74,9 @@ public class KnightController : MonoBehaviour
                 rb.velocity = Vector2.up * jumpForce;
                 jumpTimeCounter -= Time.deltaTime;
             }
-            else { //mette a false dopo aver superato il limite di tempo
+            else  //mette a false dopo aver superato il limite di tempo
                 isJumping = false;
-            }
+            
         }
 
         if(Input.GetKeyUp(KeyCode.Space)){  //si attiva se lascio "space" prima della fine del tempo
