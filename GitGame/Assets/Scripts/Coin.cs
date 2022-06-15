@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.transform.tag == "Player")
-        {
-            PlayerManager.numberOfCoins++;
-            AudioManager.instance.Play("Coins");
-            PlayerPrefs.SetInt("NumberOfCoins", PlayerManager.numberOfCoins);
+    CoinManager manager;
+
+    private void Start() {
+        manager = GameObject.Find("CoinManager").GetComponent<CoinManager>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if(collision.transform.tag == "Player") {
+            manager.AddCoins(1);
+           // AudioManager.instance.Play("Coins");
             Destroy(gameObject);
         }
-    }
+    }  
 }

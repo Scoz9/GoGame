@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 96080519564986416}
   - component: {fileID: 96080519564986417}
   - component: {fileID: 96080519564986418}
-  - component: {fileID: 96080519564986421}
+  - component: {fileID: 6205981931279149746}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -130,7 +130,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
---- !u!114 &96080519564986421
+--- !u!114 &6205981931279149746
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

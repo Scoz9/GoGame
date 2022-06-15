@@ -20,30 +20,34 @@ public class KnightController : MonoBehaviour
     private float jumpTimeCounter;
     public float jumpTime;
 
+    public float dashSpeed = 10;
+    private bool isDashing = false;
+    public float dashDuration = 0.2f;
+    private float dashDurationStart;
+
     private Animator anim;
 
     
-    void Start()
-    {
+    void Start() {
         //Grab references for rigidbody and animator from object
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
 
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
         moveInput = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
     }
 
-    void Update(){
-        
+    void Update() {
         KnightMovementRL(moveInput);
         KinghtJump();
+        Dash();
         
         //Set animator parameters
         anim.SetBool("run", moveInput != 0);
         anim.SetBool("grounded", !isJumping);
+        anim.SetBool("dash", isDashing);
     }
 
     public void KnightMovementRL(float moveInput){
@@ -81,4 +85,17 @@ public class KnightController : MonoBehaviour
         }
     }
 
+    public void Dash() {
+        if (Input.GetKeyDown("c") && isDashing == false) {
+            isDashing = true; 
+            speed += dashSpeed;
+            dashDurationStart = dashDuration;
+        }
+        if (dashDurationStart <= 0 && isDashing == true) {
+            isDashing = false; 
+            speed -= dashSpeed;
+        } else { 
+            dashDurationStart -= Time.deltaTime;
+        }
+    }
 }

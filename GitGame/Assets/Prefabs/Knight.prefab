@@ -138,6 +138,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   jumpTime: 0.3
+  dashSpeed: 10
+  dashDuration: 0.2
 --- !u!50 &7789834157101490005
 Rigidbody2D:
   serializedVersion: 4
