@@ -38,15 +38,12 @@ public class KnightController : MonoBehaviour
     }
 
     void Update(){
-        
         KnightMovementRL(moveInput);
         KinghtJump();
-        //KnightSlide();
         
         //Set animator parameters
         anim.SetBool("run", moveInput != 0);
         anim.SetBool("grounded", !isJumping);
-        //anim.SetBool("slide", )
     }
 
     public void KnightMovementRL(float moveInput){
@@ -55,6 +52,12 @@ public class KnightController : MonoBehaviour
         } else if(moveInput < 0){
             transform.eulerAngles = new Vector3(0,180,0); //cavaliere guarda a sinistra
         }
+    }
+
+    public bool canAttack()
+    {
+        return moveInput == 0 && isGrounded;
+
     }
 
     public void KinghtJump(){
