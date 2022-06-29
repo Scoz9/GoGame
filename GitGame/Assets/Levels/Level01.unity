@@ -755,7 +755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 349003780}
   - component: {fileID: 349003781}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -781,7 +781,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 80}
-  m_SizeDelta: {x: 160, y: 25}
+  m_SizeDelta: {x: 160, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &349003781
 MonoBehaviour:
@@ -830,7 +830,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 64.6
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2194,7 +2194,7 @@ GameObject:
   - component: {fileID: 688190064}
   - component: {fileID: 688190066}
   - component: {fileID: 688190065}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2233,7 +2233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7169812, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2343,7 +2343,7 @@ GameObject:
   - component: {fileID: 736029786}
   - component: {fileID: 736029789}
   - component: {fileID: 736029790}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Goblin
   m_TagString: Goblin
   m_Icon: {fileID: 0}
@@ -2462,7 +2462,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.2654953, y: -0.0858953}
@@ -2560,7 +2560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 790466876}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12949,7 +12949,7 @@ GameObject:
   - component: {fileID: 1367739073}
   - component: {fileID: 1367739075}
   - component: {fileID: 1367739074}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12988,7 +12988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.0408051, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -13191,7 +13191,7 @@ GameObject:
   m_Layer: 3
   m_Name: AttackPos
   m_TagString: Untagged
-  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -13203,7 +13203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396749897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.64, y: -0.65, z: 0}
+  m_LocalPosition: {x: 0.52, y: -0.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 806368615}
@@ -13942,8 +13942,8 @@ MonoBehaviour:
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 512
-  attackRange: 0.77
-  damage: 25
+  attackRange: 0.3
+  damage: 30
 --- !u!1001 &1661424892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15140,7 +15140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1925391668}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BorderCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15548,7 +15548,7 @@ GameObject:
   - component: {fileID: 2072895707}
   - component: {fileID: 2072895706}
   - component: {fileID: 2072895705}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
