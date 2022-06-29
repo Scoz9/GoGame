@@ -15570,10 +15570,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goblin
       objectReference: {fileID: 0}
-    - target: {fileID: 4485283680804860461, guid: ae684aa33697e87398c1d17548b5a4a7, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4485283680804860463, guid: ae684aa33697e87398c1d17548b5a4a7, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -15731,10 +15727,6 @@ PrefabInstance:
     - target: {fileID: 7389150726042903106, guid: de7fc5da652d0932c9487a4eba84b363, type: 3}
       propertyPath: m_Name
       value: Chain
-      objectReference: {fileID: 0}
-    - target: {fileID: 7389150726042903106, guid: de7fc5da652d0932c9487a4eba84b363, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de7fc5da652d0932c9487a4eba84b363, type: 3}
