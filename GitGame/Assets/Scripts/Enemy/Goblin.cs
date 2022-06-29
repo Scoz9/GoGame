@@ -15,7 +15,7 @@ public class Goblin : MonoBehaviour
     {
         enemyHealthBar.value = enemyHP;
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        Physics2D.IgnoreCollision(target.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        //Physics2D.IgnoreCollision(target.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
 
     // Update is called once per frame

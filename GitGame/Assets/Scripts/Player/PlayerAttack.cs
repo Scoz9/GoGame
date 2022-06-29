@@ -33,9 +33,9 @@ public class PlayerAttack : MonoBehaviour
         cooldownTimer += Time.deltaTime;
     }
 
-    private void Attack(){
-        anim.SetTrigger("attack");
-        cooldownTimer = 0;
+    public void Attack(){
+            anim.SetTrigger("attack");
+            cooldownTimer = 0;
     }
 
     //Per disegnare il cerchietto rosso relativo all'arma 
