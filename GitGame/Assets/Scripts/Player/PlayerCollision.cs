@@ -44,6 +44,14 @@ public class PlayerCollision : MonoBehaviour
             gameObject.SetActive(false);
         }
 
+        if(collision.transform.tag == "EndLevel")
+        {
+            YouWin.Pass();
+            PlayerManager.isWinOver = true;
+            //AudioManager.instance.Play("GameOver");
+            gameObject.SetActive(false);
+        }
+
     }
 
     IEnumerator GetHurt()
