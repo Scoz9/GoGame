@@ -72,9 +72,4 @@ public class PlayerManager : MonoBehaviour
         SceneManager.LoadScene(level);
     }
 
-    //Da fare il tasto quit 
-    /*public void QuitGame()
-    {
-        Application.Quit();
-    }*/
 }
