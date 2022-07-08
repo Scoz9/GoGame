@@ -6,6 +6,7 @@ using TMPro;
 
 public class PlayerManager : MonoBehaviour
 {
+    public static PlayerManager instance;
     public static bool isGameOver;
     public GameObject gameOverScreen;
 
@@ -17,6 +18,7 @@ public class PlayerManager : MonoBehaviour
 
     public void Awake()
     {
+        instance = this;
         numberOfCoins = PlayerPrefs.GetInt("NumberOfCoins", 0);
         isGameOver = false;
         isWinOver = false;
@@ -51,17 +53,13 @@ public class PlayerManager : MonoBehaviour
     public void WinLevel()
     {
         if(isWinOver)
-        {
             winOverScreen.SetActive(true);
-        }
     }
 
     public void GameOver()
     {
         if(isGameOver)
-        {
             gameOverScreen.SetActive(true);
-        }
     }
 
     public void GoToMenu()
