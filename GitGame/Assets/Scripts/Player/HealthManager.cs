@@ -20,13 +20,9 @@ public class HealthManager : MonoBehaviour
     void Update()
     {
         foreach(Image img in hearts)
-        {
             img.sprite = emptyHeart;
-        }
-
+        
         for(int i = 0; i < health; i++)
-        {
             hearts[i].sprite = fullHeart;
-        }
     }
 }

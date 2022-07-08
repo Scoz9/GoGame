@@ -10,6 +10,7 @@ public class Goblin : MonoBehaviour
     public int enemyHP = 100;
     public Animator anim;
     public Slider enemyHealthBar;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +20,9 @@ public class Goblin : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if(target.position.x > transform.position.x)
-            transform.eulerAngles = new Vector3(0,180,0);
-        else 
-            transform.eulerAngles = new Vector3(0,0,0);
-            
+        movementGoblin();  
     }
 
     public void TakeDamage(int damageAmount)
@@ -33,12 +30,20 @@ public class Goblin : MonoBehaviour
         enemyHP -= damageAmount;
         enemyHealthBar.value = enemyHP;
         if(enemyHP > 0)
-        {
             anim.SetTrigger("damage");
-        } else {
+        else 
+        {
             anim.SetTrigger("death");
             GetComponent<CapsuleCollider2D>().enabled = false;
             this.enabled = false;
         }
+    }
+
+    public void movementGoblin()
+    {
+        if(target.position.x > transform.position.x)
+            transform.eulerAngles = new Vector3(0,180,0);
+        else 
+            transform.eulerAngles = new Vector3(0,0,0);
     }
 }

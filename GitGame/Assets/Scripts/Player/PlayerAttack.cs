@@ -25,7 +25,8 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.C) && cooldownTimer > attackCooldown && playerMovement.canAttack()){
+        if(Input.GetKeyDown(KeyCode.C) && cooldownTimer > attackCooldown && playerMovement.canAttack())
+        {
             Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
             for(int i = 0; i < enemiesToDamage.Length; i++) enemiesToDamage[i].GetComponent<Goblin>().TakeDamage(damage);
             Attack();
@@ -33,13 +34,15 @@ public class PlayerAttack : MonoBehaviour
         cooldownTimer += Time.deltaTime;
     }
 
-    public void Attack(){
+    public void Attack()
+    {
             anim.SetTrigger("attack");
             cooldownTimer = 0;
     }
 
     //Per disegnare il cerchietto rosso relativo all'arma 
-    void OnDrawGizmosSelected(){
+    void OnDrawGizmosSelected()
+    {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }

@@ -12,39 +12,24 @@ public class PlayerCollision : MonoBehaviour
     }*/
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.transform.tag == "Enemy") // 
+        if(collision.transform.tag == "Enemy" || collision.transform.tag == "Goblin") 
         {
             HealthManager.health--;
             if(HealthManager.health <= 0){
                 PlayerManager.isGameOver = true;
                 AudioManager.instance.Play("GameOver");
-                gameObject.SetActive(false);
-                
-            } else  {
-                StartCoroutine(GetHurt());
-            }
-        }
-        if(collision.transform.tag == "Goblin") // 
-        {                   
-            HealthManager.health--;
-            if(HealthManager.health <= 0){
-                PlayerManager.isGameOver = true;
-                AudioManager.instance.Play("GameOver");
                 gameObject.SetActive(false); 
-            } else  {
+            } else 
                 StartCoroutine(GetHurt());
-            }        
-
         }
-        if(collision.transform.tag == "Water")
+        else if(collision.transform.tag == "Water")
         {
             HealthManager.health = 0;
             PlayerManager.isGameOver = true;
             AudioManager.instance.Play("GameOver");
             gameObject.SetActive(false);
         }
-
-        if(collision.transform.tag == "EndLevel")
+        else if(collision.transform.tag == "EndLevel")
         {
             YouWin.Pass();
             PlayerManager.isWinOver = true;

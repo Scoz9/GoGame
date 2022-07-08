@@ -1,4 +1,3 @@
-using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,17 +18,22 @@ public class MenuEvents : MonoBehaviour
         volumeSlider.value = value;
     }
     
-    public void SetVolume()
+    public void SetVolume() 
     {
         mixer.SetFloat("volume", volumeSlider.value);
     }
-    public void LoadLevel(int index)
+
+    public void LoadLevel(int index) 
     {
         SceneManager.LoadScene(index);
     }
-
-    public void DeletePlayerPrefs()
+    public void LoadLevel(string name) 
     {
-       PlayerPrefs.DeleteAll();  
+        SceneManager.LoadScene(name);
+    }
+
+    public void DeletePlayerPrefs() 
+    {
+        PlayerPrefs.DeleteAll();
     }
 }

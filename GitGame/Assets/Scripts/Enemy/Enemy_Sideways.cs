@@ -18,9 +18,7 @@ public class Enemy_Sideways : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.Translate(Vector2.right * speed * Time.fixedDeltaTime * dir);
-        if(transform.position.x < startingX || transform.position.x > startingX + range)
-            dir *= -1;
+        movementSideways();
     }
 
     /*private void OnTriggerEnter2D(Collider2D collision){
@@ -28,4 +26,11 @@ public class Enemy_Sideways : MonoBehaviour
             collision.GetComponent<Health>().TakeDamage(damage);
         }
     }*/
+
+    public void movementSideways()
+    {
+        transform.Translate(Vector2.right * speed * Time.fixedDeltaTime * dir);
+        if(transform.position.x < startingX || transform.position.x > startingX + range)
+            dir *= -1;
+    }
 }

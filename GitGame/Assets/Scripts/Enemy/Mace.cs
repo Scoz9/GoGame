@@ -18,6 +18,11 @@ public class Mace : MonoBehaviour
     //Per rendere il gioco più smoother
     void FixedUpdate()
     {
+        movementMace();
+    }
+
+    public void movementMace()
+    {
         transform.Translate(Vector2.up * speed * Time.fixedDeltaTime * dir);
         if(transform.position.y < startingY || transform.position.y > startingY + range)
             dir *= -1;

@@ -13,6 +13,11 @@ public class Parallax : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        movementMainCam();
+    }
+
+    public void movementMainCam()
+    {
         if (mainCam.position.x > middleBG.position.x)
             sideBG.position = middleBG.position + Vector3.right * length;
 
@@ -25,6 +30,5 @@ public class Parallax : MonoBehaviour
             middleBG = sideBG;
             sideBG = z;
         }
-
     }
 }
