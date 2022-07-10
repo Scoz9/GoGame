@@ -851,8 +851,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1019141235}
-        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
+      - m_Target: {fileID: 1019141238}
+        m_TargetAssemblyTypeName: GuiManager, Assembly-CSharp
         m_MethodName: GoToMenu
         m_Mode: 1
         m_Arguments:
@@ -983,8 +983,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1019141235}
-        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
+      - m_Target: {fileID: 1019141238}
+        m_TargetAssemblyTypeName: GuiManager, Assembly-CSharp
         m_MethodName: ReplayLevel
         m_Mode: 1
         m_Arguments:
@@ -1258,8 +1258,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1019141235}
-        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
+      - m_Target: {fileID: 1019141238}
+        m_TargetAssemblyTypeName: GuiManager, Assembly-CSharp
         m_MethodName: ReplayLevel
         m_Mode: 1
         m_Arguments:
@@ -1451,7 +1451,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1019141235}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -1677,7 +1677,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470435954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5862379, y: 4.8999996, z: -10}
+  m_LocalPosition: {x: 0.03090477, y: 4.8999996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2716,7 +2716,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693664148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5862379, y: 4.8999996, z: -10}
+  m_LocalPosition: {x: 0.03090477, y: 4.8999996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1476516470}
@@ -15695,32 +15695,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1019141236}
-  - component: {fileID: 1019141235}
   - component: {fileID: 1019141237}
   - component: {fileID: 1019141238}
   m_Layer: 0
-  m_Name: PlayerManager
+  m_Name: GuiManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1019141235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019141234}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c245c9cb4f5428a26b38673c84dad32a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameOverScreen: {fileID: 2060707968}
-  winOverScreen: {fileID: 690944664}
-  coinsText: {fileID: 1742928706}
-  pauseMenuScreen: {fileID: 744798840}
 --- !u!4 &1019141236
 Transform:
   m_ObjectHideFlags: 0
@@ -15856,8 +15839,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1019141235}
-        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
+      - m_Target: {fileID: 1019141238}
+        m_TargetAssemblyTypeName: GuiManager, Assembly-CSharp
         m_MethodName: GoToNextLevel
         m_Mode: 3
         m_Arguments:
@@ -17723,8 +17706,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1019141235}
-        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
+      - m_Target: {fileID: 1019141238}
+        m_TargetAssemblyTypeName: GuiManager, Assembly-CSharp
         m_MethodName: PauseGame
         m_Mode: 1
         m_Arguments:
@@ -18717,8 +18700,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1019141235}
-        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
+      - m_Target: {fileID: 1019141238}
+        m_TargetAssemblyTypeName: GuiManager, Assembly-CSharp
         m_MethodName: GoToMenu
         m_Mode: 1
         m_Arguments:
@@ -21027,7 +21010,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1019141235}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
         m_MethodName: GoToMenu
         m_Mode: 1

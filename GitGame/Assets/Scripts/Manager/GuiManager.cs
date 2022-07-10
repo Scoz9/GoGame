@@ -4,21 +4,22 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class PlayerManager : MonoBehaviour
+public class GuiManager : MonoBehaviour
 {
-    public static PlayerManager instance;
+    public static GuiManager instance;
     public static bool isGameOver;
-    public GameObject gameOverScreen;
+    [SerializeField] GameObject gameOverScreen;
 
     public static bool isWinOver;
-    public GameObject winOverScreen;
+    [SerializeField] GameObject winOverScreen;
     public static int numberOfCoins;
-    public TextMeshProUGUI coinsText;
-    public GameObject pauseMenuScreen;
+    [SerializeField] TextMeshProUGUI coinsText;
+    [SerializeField] GameObject pauseMenuScreen;
 
     public void Awake()
     {
-        instance = this;
+		instance = this;
+	
         numberOfCoins = PlayerPrefs.GetInt("NumberOfCoins", 0);
         isGameOver = false;
         isWinOver = false;
@@ -35,6 +36,7 @@ public class PlayerManager : MonoBehaviour
 
     public void ReplayLevel()
     {
+        Debug.Log("Replay");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -54,6 +56,15 @@ public class PlayerManager : MonoBehaviour
     {
         if(isWinOver)
             winOverScreen.SetActive(true);
+    }
+
+    public void LevelPassed(){
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+
+        if(currentLevel >= PlayerPrefs.GetInt("levelsUnlocked"))
+            PlayerPrefs.SetInt("levelsUnlocked", currentLevel+1);
+
+        //Debug.Log("LEVEL" + PlayerPrefs.GetInt("levelsUnlocked") + "UNLOCKED");
     }
 
     public void GameOver()
