@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    //private PlayerAttack playerAttack;
-
-    /*private void Awake()
-    {
-        playerAttack = GetComponent<PlayerAttack>();
-    }*/
-
-
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.transform.tag == "Enemy" || collision.transform.tag == "Goblin") 
         {
+            Debug.Log("nemico");
             HealthManager.health--;
             if(HealthManager.health <= 0){
                 GuiManager.isGameOver = true;

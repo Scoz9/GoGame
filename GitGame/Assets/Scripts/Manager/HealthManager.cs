@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class HealthManager : MonoBehaviour
 {
 
+    public static HealthManager instance;
+
     public static int health = 3;
 
     public Image[] hearts;
@@ -14,6 +16,13 @@ public class HealthManager : MonoBehaviour
 
     void Awake()
     {
+        if (instance != null)
+			Destroy(gameObject);
+		else
+		{
+			instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
         health = 3;
     }
     // Update is called once per frame

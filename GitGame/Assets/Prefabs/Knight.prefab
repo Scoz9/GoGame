@@ -70,10 +70,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7789834157101490011}
   - component: {fileID: 7789834157101490010}
-  - component: {fileID: 7789834157101490004}
   - component: {fileID: 7789834157101490005}
   - component: {fileID: 7789834157101490006}
   - component: {fileID: 7789834157101490007}
+  - component: {fileID: 7789834157101490004}
   - component: {fileID: 343240282}
   - component: {fileID: 1649239507}
   m_Layer: 3
@@ -150,26 +150,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7789834157101490004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7789834157101490009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c479de564048ae44b8aa29220f33f862, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 7
-  jumpForce: 12
-  feetPos: {fileID: 7789834156156223207}
-  checkRadius: 0.5
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
-  jumpTime: 0.3
 --- !u!50 &7789834157101490005
 Rigidbody2D:
   serializedVersion: 4
@@ -236,6 +216,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7789834157101490004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789834157101490009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c479de564048ae44b8aa29220f33f862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 7
+  jumpForce: 12
+  feetPos: {fileID: 7789834156156223207}
+  checkRadius: 0.5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  jumpTime: 0.3
 --- !u!114 &343240282
 MonoBehaviour:
   m_ObjectHideFlags: 0

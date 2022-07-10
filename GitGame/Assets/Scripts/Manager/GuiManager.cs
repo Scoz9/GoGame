@@ -36,7 +36,6 @@ public class GuiManager : MonoBehaviour
 
     public void ReplayLevel()
     {
-        Debug.Log("Replay");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
