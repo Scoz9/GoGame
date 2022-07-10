@@ -10,9 +10,20 @@ public class PlayerCollision : MonoBehaviour
     {
         playerAttack = GetComponent<PlayerAttack>();
     }*/
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.transform.tag == "Enemy" || collision.transform.tag == "Goblin") 
+        if(collision.transform.tag == "Enemy") 
+        {
+            HealthManager.health--;
+            if(HealthManager.health <= 0){
+                PlayerManager.isGameOver = true;
+                AudioManager.instance.Play("GameOver");
+                gameObject.SetActive(false); 
+            } else 
+                StartCoroutine(GetHurt());
+        } else if(collision.transform.tag == "Goblin")
         {
             HealthManager.health--;
             if(HealthManager.health <= 0){
@@ -38,7 +49,7 @@ public class PlayerCollision : MonoBehaviour
         }
 
     }
-
+    
     IEnumerator GetHurt()
     {
         Physics2D.IgnoreLayerCollision(3,8);
