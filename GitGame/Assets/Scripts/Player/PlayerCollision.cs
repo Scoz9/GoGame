@@ -27,7 +27,7 @@ public class PlayerCollision : MonoBehaviour
         {
             HealthManager.health--;
             if(HealthManager.health <= 0){
-                PlayerManager.isGameOver = true;
+                GuiManager.isGameOver = true;
                 AudioManager.instance.Play("GameOver");
                 gameObject.SetActive(false); 
             } else 
@@ -36,14 +36,14 @@ public class PlayerCollision : MonoBehaviour
         else if(collision.transform.tag == "Water")
         {
             HealthManager.health = 0;
-            PlayerManager.isGameOver = true;
+            GuiManager.isGameOver = true;
             AudioManager.instance.Play("GameOver");
             gameObject.SetActive(false);
         }
         else if(collision.transform.tag == "EndLevel")
         {
             YouWin.Pass();
-            PlayerManager.isWinOver = true;
+            GuiManager.isWinOver = true;
             //AudioManager.instance.Play("GameOver");
             gameObject.SetActive(false);
         }
