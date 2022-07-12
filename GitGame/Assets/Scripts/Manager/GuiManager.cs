@@ -7,10 +7,10 @@ using TMPro;
 public class GuiManager : MonoBehaviour
 {
     public static GuiManager instance;
-    public static bool isGameOver;
+    public bool isGameOver;
     [SerializeField] GameObject gameOverScreen;
 
-    public static bool isWinOver;
+    public bool isWinOver;
     [SerializeField] GameObject winOverScreen;
     public static int numberOfCoins;
     [SerializeField] TextMeshProUGUI coinsText;
@@ -19,7 +19,6 @@ public class GuiManager : MonoBehaviour
     public void Awake()
     {
 		instance = this;
-	
         numberOfCoins = PlayerPrefs.GetInt("NumberOfCoins", 0);
         isGameOver = false;
         isWinOver = false;

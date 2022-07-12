@@ -27,6 +27,7 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene(index);
     }
+
     public void LoadLevel(string name) 
     {
         Time.timeScale = 1;
@@ -35,7 +36,6 @@ public class MenuManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Quit!");
     }
 
     public void DeletePlayerPrefs() 

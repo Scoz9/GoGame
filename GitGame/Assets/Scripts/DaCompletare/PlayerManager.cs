@@ -17,7 +17,7 @@ public class PlayerManager : MonoBehaviour
     {
         HealthManager.health --;
         if(HealthManager.health <= 0){
-            GuiManager.isGameOver = true;
+            GuiManager.instance.isGameOver = true;
             AudioManager.instance.Play("GameOver");
             gameObject.SetActive(false);
         }
@@ -26,7 +26,7 @@ public class PlayerManager : MonoBehaviour
     public void TakeDamageWater()
     {
         HealthManager.health = 0;
-        GuiManager.isGameOver = true;
+        GuiManager.instance.isGameOver = true;
         AudioManager.instance.Play("GameOver");
         gameObject.SetActive(false);
     }

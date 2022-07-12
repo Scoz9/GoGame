@@ -12,7 +12,7 @@ public class PlayerCollision : MonoBehaviour
             Debug.Log("nemico");
             HealthManager.health--;
             if(HealthManager.health <= 0){
-                GuiManager.isGameOver = true;
+                GuiManager.instance.isGameOver = true;
                 AudioManager.instance.Play("GameOver");
                 gameObject.SetActive(false); 
             } else 
@@ -20,14 +20,14 @@ public class PlayerCollision : MonoBehaviour
         } else if(collision.transform.tag == "Water")
         {
             HealthManager.health = 0;
-            GuiManager.isGameOver = true;
+            GuiManager.instance.isGameOver = true;
             AudioManager.instance.Play("GameOver");
             gameObject.SetActive(false);
         }
         else if(collision.transform.tag == "EndLevel")
         {
             GuiManager.instance.LevelPassed();
-            GuiManager.isWinOver = true;
+            GuiManager.instance.isWinOver = true;
             //AudioManager.instance.Play("GameOver");
             gameObject.SetActive(false);
         }
