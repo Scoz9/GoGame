@@ -10,8 +10,8 @@ public class PlayerCollision : MonoBehaviour
         if(collision.transform.tag == "Enemy" || collision.transform.tag == "Goblin") 
         {
             Debug.Log("nemico");
-            HealthManager.health--;
-            if(HealthManager.health <= 0){
+            HealthManager.instance.health--;
+            if(HealthManager.instance.health <= 0){
                 GuiManager.instance.isGameOver = true;
                 AudioManager.instance.Play("GameOver");
                 gameObject.SetActive(false); 
@@ -19,7 +19,7 @@ public class PlayerCollision : MonoBehaviour
                 StartCoroutine(GetHurt());
         } else if(collision.transform.tag == "Water")
         {
-            HealthManager.health = 0;
+            HealthManager.instance.health = 0;
             GuiManager.instance.isGameOver = true;
             AudioManager.instance.Play("GameOver");
             gameObject.SetActive(false);

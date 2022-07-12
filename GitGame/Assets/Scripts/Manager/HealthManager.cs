@@ -8,7 +8,7 @@ public class HealthManager : MonoBehaviour
 
     public static HealthManager instance;
 
-    public static int health = 3;
+    public int health = 3;
 
     public Image[] hearts;
     public Sprite fullHeart;

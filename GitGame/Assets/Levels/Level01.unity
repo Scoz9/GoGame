@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &37843273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -792,6 +792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc92ee1d13c6a5c938fe9352932f3c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 3
   hearts:
   - {fileID: 1300483408}
   - {fileID: 1438134410}
@@ -1727,7 +1728,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470435954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3085442, y: 4.8999996, z: -10}
+  m_LocalPosition: {x: 0.2678957, y: 4.8999996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2766,7 +2767,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693664148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.3085442, y: 4.8999996, z: -10}
+  m_LocalPosition: {x: 0.2678957, y: 4.8999996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1476516470}
@@ -15779,8 +15780,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 960e27d6456469445932793775e91452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGameOver: 0
   gameOverScreen: {fileID: 2060707968}
+  isWinOver: 0
   winOverScreen: {fileID: 690944664}
+  numberOfCoins: 0
   coinsText: {fileID: 1742928706}
   pauseMenuScreen: {fileID: 744798840}
 --- !u!4 &1025648087 stripped

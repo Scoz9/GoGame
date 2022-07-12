@@ -12,7 +12,7 @@ public class GuiManager : MonoBehaviour
 
     public bool isWinOver;
     [SerializeField] GameObject winOverScreen;
-    public static int numberOfCoins;
+    public int numberOfCoins;
     [SerializeField] TextMeshProUGUI coinsText;
     [SerializeField] GameObject pauseMenuScreen;
 
