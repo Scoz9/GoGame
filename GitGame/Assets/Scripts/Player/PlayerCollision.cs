@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.transform.tag == "Enemy" || collision.transform.tag == "Goblin") 
         {
-            Debug.Log("nemico");
             HealthManager.instance.health--;
             if(HealthManager.instance.health <= 0){
                 GuiManager.instance.isGameOver = true;
@@ -28,6 +26,7 @@ public class PlayerCollision : MonoBehaviour
         {
             GuiManager.instance.LevelPassed();
             GuiManager.instance.isWinOver = true;
+            TimerController.instance.Finish();
             //AudioManager.instance.Play("GameOver");
             gameObject.SetActive(false);
         }

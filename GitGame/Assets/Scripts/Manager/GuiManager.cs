@@ -16,6 +16,7 @@ public class GuiManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI coinsText;
     [SerializeField] GameObject pauseMenuScreen;
 
+
     public void Awake()
     {
 		instance = this;
@@ -25,10 +26,9 @@ public class GuiManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         coinsText.text = numberOfCoins.ToString();
-        
         GameOver();
         WinLevel();
     }
@@ -80,5 +80,13 @@ public class GuiManager : MonoBehaviour
     {
         SceneManager.LoadScene(level);
     }
+
+    /*public void BeginGame()
+    {
+        TimerController.instance.Begin();
+    }*/
+
+
+
 
 }
