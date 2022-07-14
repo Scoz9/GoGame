@@ -1,4 +1,3 @@
-using System.Security.Cryptography;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,18 +21,21 @@ public class KnightController : MonoBehaviour
     public float jumpTime;
 
     private Animator anim;
-
+    public static bool canMove;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        canMove = false;
     }
 
     void FixedUpdate()
     {
-        moveInput = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        if(canMove){
+            moveInput = Input.GetAxisRaw("Horizontal");
+            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        }
     }
 
     void Update(){

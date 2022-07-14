@@ -1,3 +1,4 @@
+using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ using TMPro;
 public class GuiManager : MonoBehaviour
 {
     public static GuiManager instance;
+
     public bool isGameOver;
     [SerializeField] GameObject gameOverScreen;
 
@@ -15,6 +17,8 @@ public class GuiManager : MonoBehaviour
     public int numberOfCoins;
     [SerializeField] TextMeshProUGUI coinsText;
     [SerializeField] GameObject pauseMenuScreen;
+    
+    public bool gamePlaying; 
 
 
     public void Awake()
@@ -23,6 +27,7 @@ public class GuiManager : MonoBehaviour
         numberOfCoins = PlayerPrefs.GetInt("NumberOfCoins", 0);
         isGameOver = false;
         isWinOver = false;
+        gamePlaying = false;
     }
 
     // Update is called once per frame
@@ -81,10 +86,10 @@ public class GuiManager : MonoBehaviour
         SceneManager.LoadScene(level);
     }
 
-    /*public void BeginGame()
+    public void BeginGame()
     {
-        TimerController.instance.Begin();
-    }*/
+        gamePlaying = true;
+    }
 
 
 
