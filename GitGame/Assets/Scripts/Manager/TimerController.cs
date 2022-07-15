@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class TimerController : MonoBehaviour
 {
     public static TimerController instance;
-    // Start is called before the first frame update
     public Text highscoreText;
     public Text scoreText;
     float timefl;
@@ -20,6 +19,7 @@ public class TimerController : MonoBehaviour
     
     }
 
+    // Start is called before the first frame update
     void Start(){
         timefl = 0;
         finished = false;

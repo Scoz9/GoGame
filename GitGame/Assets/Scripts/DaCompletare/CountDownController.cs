@@ -23,7 +23,6 @@ public class CountDownController : MonoBehaviour
 
             countdownTime--;
         }
-        Debug.Log("fuori");
         countdownDisplay.text = "GO!";
 
         TimerController2.instance.BeginTimer();

@@ -21,7 +21,7 @@ public class HealthManager : MonoBehaviour
 		else
 		{
 			instance = this;
-			DontDestroyOnLoad(gameObject);
+			//DontDestroyOnLoad(gameObject);
 		}
         health = 3;
     }

@@ -26,7 +26,7 @@ public class PlayerCollision : MonoBehaviour
         {
             GuiManager.instance.LevelPassed();
             GuiManager.instance.isWinOver = true;
-            TimerController.instance.Finish();
+            TimerController2.instance.EndTimer();
             //AudioManager.instance.Play("GameOver");
             gameObject.SetActive(false);
         }

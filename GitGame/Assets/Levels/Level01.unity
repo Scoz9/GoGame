@@ -1765,7 +1765,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470435954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 102.79905, y: 5.7199993, z: -10}
+  m_LocalPosition: {x: 103.56825, y: 5.7199993, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2176,6 +2176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeCounter: {fileID: 1838990627}
+  highscoreText: {fileID: 1804516233}
 --- !u!4 &536816082
 Transform:
   m_ObjectHideFlags: 0
@@ -2848,7 +2849,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693664148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 102.79905, y: 5.7199993, z: -10}
+  m_LocalPosition: {x: 103.56825, y: 5.7199993, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1476516470}
@@ -15848,6 +15849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95de8a5c538841be08315a15295cd8cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instance: {fileID: 0}
   countdownTime: 3
   countdownDisplay: {fileID: 1253080667}
 --- !u!4 &1019141236
