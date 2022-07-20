@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class CoinCollision : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.transform.tag == "Player")
         {
-            GuiManager.instance.numberOfCoins++;
+            CoinManager.instance.numberOfCoins++;
             AudioManager.instance.Play("Coins");
-            PlayerPrefs.SetInt("NumberOfCoins", GuiManager.instance.numberOfCoins);
+            SaveGame.SaveCoins(CoinManager.instance.numberOfCoins);
             Destroy(gameObject);
         }
     }

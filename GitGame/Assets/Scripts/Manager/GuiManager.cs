@@ -1,4 +1,3 @@
-using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,8 +13,8 @@ public class GuiManager : MonoBehaviour
 
     public bool isWinOver;
     [SerializeField] GameObject winOverScreen;
-    public int numberOfCoins;
-    [SerializeField] TextMeshProUGUI coinsText;
+    //public int numberOfCoins;
+    //[SerializeField] TextMeshProUGUI coinsText;
     [SerializeField] GameObject pauseMenuScreen;
     
     public bool gamePlaying; 
@@ -24,7 +23,7 @@ public class GuiManager : MonoBehaviour
     public void Awake()
     {
 		instance = this;
-        numberOfCoins = PlayerPrefs.GetInt("NumberOfCoins", 0);
+        //numberOfCoins = PlayerPrefs.GetInt("NumberOfCoins", 0);
         isGameOver = false;
         isWinOver = false;
         gamePlaying = false;
@@ -33,7 +32,7 @@ public class GuiManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        coinsText.text = numberOfCoins.ToString();
+        //coinsText.text = numberOfCoins.ToString();
         GameOver();
         WinLevel();
     }
@@ -64,10 +63,8 @@ public class GuiManager : MonoBehaviour
     public void LevelPassed(){
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
 
-        if(currentLevel >= PlayerPrefs.GetInt("levelsUnlocked"))
-            PlayerPrefs.SetInt("levelsUnlocked", currentLevel+1);
-
-        //Debug.Log("LEVEL" + PlayerPrefs.GetInt("levelsUnlocked") + "UNLOCKED");
+        if(currentLevel >= SaveGame.GetLevelUnlocked())
+            SaveGame.SetLevelUnlocked(currentLevel+1);
     }
 
     public void GameOver()
