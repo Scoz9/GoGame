@@ -39,6 +39,7 @@ public class GuiManager : MonoBehaviour
 
     public void ReplayLevel()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -80,6 +81,7 @@ public class GuiManager : MonoBehaviour
 
     public void GoToNextLevel(int level)
     {
+        //Time.timeScale = 1;
         SceneManager.LoadScene(level);
     }
 
@@ -87,8 +89,5 @@ public class GuiManager : MonoBehaviour
     {
         gamePlaying = true;
     }
-
-
-
 
 }
