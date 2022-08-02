@@ -18,6 +18,7 @@ public class TimerController2 : MonoBehaviour
     private float startTime;
     private string timePlayingStr;
     private string HighscorePlayingStr;
+    public int level;
 
 
     private void Awake()
@@ -30,7 +31,10 @@ public class TimerController2 : MonoBehaviour
     {
         timeCounter.text = "Time: 00:00.00";
         timerGoing = false;
-        highscoreText.text = PlayerPrefs.GetString("Highscore"); 
+        if(level == 1)
+            highscoreText.text = PlayerPrefs.GetString("Highscore"); 
+        else if(level == 2)
+            highscoreText.text = PlayerPrefs.GetString("Highscore2");  
     }
 
     public void BeginTimer(){
@@ -41,25 +45,48 @@ public class TimerController2 : MonoBehaviour
         StartCoroutine(UpdateTimer());
     }
 
-    public void EndTimer(){
+   public void EndTimer(){
         timerGoing = false;
         
-        if(PlayerPrefs.GetInt("HighscoreMinutes") == 0)
-            PlayerPrefs.SetInt("HighscoreMinutes", minutes);
-        if(PlayerPrefs.GetFloat("HighscoreSeconds") == 0) 
-            PlayerPrefs.SetFloat("HighscoreSeconds", seconds);
-        
-        if(minutes == PlayerPrefs.GetInt("HighscoreMinutes")){
-            if(seconds <= PlayerPrefs.GetFloat("HighscoreSeconds")){
+        if(level == 1){
+            Debug.Log("Level: " + 1);
+            if(PlayerPrefs.GetInt("HighscoreMinutes") == 0)
+                PlayerPrefs.SetInt("HighscoreMinutes", minutes);
+            if(PlayerPrefs.GetFloat("HighscoreSeconds") == 0) 
+                PlayerPrefs.SetFloat("HighscoreSeconds", seconds);
+            
+            if(minutes == PlayerPrefs.GetInt("HighscoreMinutes")){
+                if(seconds <= PlayerPrefs.GetFloat("HighscoreSeconds")){
+                    PlayerPrefs.SetFloat("HighscoreSeconds", seconds);
+                    PlayerPrefs.SetString("Highscore", HighscorePlayingStr);
+                }
+            } else if(minutes < PlayerPrefs.GetInt("HighscoreMinutes")){
+                PlayerPrefs.SetInt("HighscoreMinutes", minutes);
                 PlayerPrefs.SetFloat("HighscoreSeconds", seconds);
                 PlayerPrefs.SetString("Highscore", HighscorePlayingStr);
             }
-        } else if(minutes < PlayerPrefs.GetInt("HighscoreMinutes")){
-            PlayerPrefs.SetInt("HighscoreMinutes", minutes);
-            PlayerPrefs.SetFloat("HighscoreSeconds", seconds);
-            PlayerPrefs.SetString("Highscore", HighscorePlayingStr);
+            highscoreText.text = PlayerPrefs.GetString("Highscore");
         }
-        highscoreText.text = PlayerPrefs.GetString("Highscore");
+        else if(level == 2){
+            Debug.Log("Level: " + 2);
+            if(PlayerPrefs.GetInt("HighscoreMinutes2") == 0)
+                PlayerPrefs.SetInt("HighscoreMinutes2", minutes);
+            if(PlayerPrefs.GetFloat("HighscoreSeconds2") == 0) 
+                PlayerPrefs.SetFloat("HighscoreSeconds2", seconds);
+            
+            if(minutes == PlayerPrefs.GetInt("HighscoreMinutes2")){
+                if(seconds <= PlayerPrefs.GetFloat("HighscoreSeconds2")){
+                    PlayerPrefs.SetFloat("HighscoreSeconds2", seconds);
+                    PlayerPrefs.SetString("Highscore2", HighscorePlayingStr);
+                }
+            } else if(minutes < PlayerPrefs.GetInt("HighscoreMinutes2")){
+                PlayerPrefs.SetInt("HighscoreMinutes2", minutes);
+                PlayerPrefs.SetFloat("HighscoreSeconds2", seconds);
+                PlayerPrefs.SetString("Highscore2", HighscorePlayingStr);
+            }
+            highscoreText.text = PlayerPrefs.GetString("Highscore2");
+        }
+        
     }
 
     private IEnumerator UpdateTimer(){
