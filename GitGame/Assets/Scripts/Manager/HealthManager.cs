@@ -5,29 +5,21 @@ using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour
 {
-
     public static HealthManager instance;
 
-    public int health = 3;
+    public int health;
 
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
-    void Awake()
-    {
-        if (instance != null)
-			Destroy(gameObject);
-		else
-		{
-			instance = this;
-			//DontDestroyOnLoad(gameObject);
-		}
+    void Awake() {
+		instance = this;
         health = 3;
     }
+
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         foreach(Image img in hearts)
             img.sprite = emptyHeart;
         

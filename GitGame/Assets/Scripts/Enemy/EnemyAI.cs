@@ -27,14 +27,13 @@ public class EnemyAI: MonoBehaviour
         seeker.StartPath(rb.position, target.position, OnPathComplete);
     }
 
+    //Fa creare un nuovo percorso ogni .5 secondi (parametro passato a InvokerRepeating)
     void UpdatePath(){
         if(seeker.IsDone())
             seeker.StartPath(rb.position, target.position, OnPathComplete);
-
     }
 
     void OnPathComplete(Path p){
-
         if(!p.error){
             path = p;
             currentWaypoint = 0;
@@ -63,6 +62,7 @@ public class EnemyAI: MonoBehaviour
         if(distance < nextWaypointDistance) 
             currentWaypoint++;
 
+        //Fa ruotare la sprite nella direzione in cui si muove
         if(force.x >= 0.01f) 
            BirdsGFX.localScale = new Vector3(1f, 1f, 1f);
         else if(force.x <= -0.01f)
