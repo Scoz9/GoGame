@@ -2,29 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mace : MonoBehaviour
-{
-    public float speed = 0.8f;
-    public float range = 3;
-
-    float startingY;
-    int dir = 1;
-
+public class Mace : SimpleEnemy {
     void Start()
     {
-        startingY = transform.position.y;
+        speed = 2.5f;
+        range = 3;
+        startingPosition = transform.position.y;
+        dir = 1;
     }
 
-    //Per rendere il gioco più smoother
     void FixedUpdate()
     {
-        movementMace();
+        Move();
     }
 
-    public void movementMace()
+    public override void Move()
     {
         transform.Translate(Vector2.up * speed * Time.fixedDeltaTime * dir);
-        if(transform.position.y < startingY || transform.position.y > startingY + range)
+        if(transform.position.y < startingPosition || transform.position.y > startingPosition + range)
             dir *= -1;
     }
 }
