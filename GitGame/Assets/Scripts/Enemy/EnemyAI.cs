@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class EnemyAI: MonoBehaviour
+public class EnemyAI: ComplexEnemy
 {
-
-    public Transform target;
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
 
@@ -20,8 +18,12 @@ public class EnemyAI: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hp = 10;
+        healthBar.value = hp;
+
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+        target = GameObject.FindGameObjectWithTag("Player").transform;
 
         InvokeRepeating("UpdatePath", 0f, .5f);
         seeker.StartPath(rb.position, target.position, OnPathComplete);
@@ -43,29 +45,48 @@ public class EnemyAI: MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(path == null)
-            return;
-        
-        if(currentWaypoint >= path.vectorPath.Count)
-        {
+        Move();
+    }
+
+    public override void Move()
+    {
+        if (path == null) return;
+
+        if (currentWaypoint >= path.vectorPath.Count) {
             reachedEndOfPath = true;
             return;
-        } else 
+        } else
             reachedEndOfPath = false;
-        
+
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = direction * speed * Time.deltaTime;
 
         rb.AddForce(force);
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
-        if(distance < nextWaypointDistance) 
+        if (distance < nextWaypointDistance)
             currentWaypoint++;
 
         //Fa ruotare la sprite nella direzione in cui si muove
-        if(force.x >= 0.01f) 
-           BirdsGFX.localScale = new Vector3(1f, 1f, 1f);
-        else if(force.x <= -0.01f)
-            BirdsGFX.localScale = new Vector3(-1f, 1f, 1f); 
+        if (force.x >= 0.01f)
+            BirdsGFX.localScale = new Vector3(1f, 1f, 1f);
+        else if (force.x <= -0.01f)
+            BirdsGFX.localScale = new Vector3(-1f, 1f, 1f);
     }
+
+    /* public override void takeDamage(int damageTaken)
+    {
+        hp -= damageTaken;
+        healthBar.value = hp;
+        /* if (hp > 0) anim.SetTrigger("damage");
+        else
+        {
+            anim.SetTrigger("death");
+            GetComponent<CapsuleCollider2D>().enabled = false;
+            this.enabled = false;
+        } //
+        
+        if (hp <= 0) this.enabled = false;
+        Destroy(gameObject);
+    } */
 }

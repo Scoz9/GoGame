@@ -112,7 +112,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &4485283679465766570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,8 +238,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: -5.29, y: 0}
+  m_SizeDelta: {x: -19.42, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4485283680782183452
 GameObject:
@@ -275,8 +275,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5.24, y: 0}
-  m_SizeDelta: {x: -10.49, y: 0}
+  m_AnchoredPosition: {x: -5.2423, y: 0}
+  m_SizeDelta: {x: -10.485, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4485283680782183425
 CanvasRenderer:
@@ -434,10 +434,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a5c67e855ce2a54a0dc7a47bbdaad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 100
+  healthBar: {fileID: 4485283680820493942}
   borderCheck: {fileID: 4485283679310396231}
-  enemyHP: 100
   anim: {fileID: 4485283680804860457}
-  enemyHealthBar: {fileID: 4485283680820493942}
 --- !u!70 &4485283680804860461
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -451,8 +451,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.10989761, y: -0.00004887581}
-  m_Size: {x: 2.2446976, y: 2.82159}
+  m_Offset: {x: 0.15355682, y: -0.005771756}
+  m_Size: {x: 3.1125793, y: 3.1125793}
   m_Direction: 0
 --- !u!1 &4485283680820493936
 GameObject:

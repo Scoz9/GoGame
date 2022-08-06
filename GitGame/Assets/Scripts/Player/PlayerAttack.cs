@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.C) && cooldownTimer > attackCooldown && playerMovement.canAttack())
         {
             Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
-            for(int i = 0; i < enemiesToDamage.Length; i++) enemiesToDamage[i].GetComponent<Goblin>().TakeDamage(damage);
+            for (int i = 0; i < enemiesToDamage.Length; i++) enemiesToDamage[i].GetComponent<Goblin>().takeDamage(damage);
             Attack();
         }
         cooldownTimer += Time.deltaTime;
