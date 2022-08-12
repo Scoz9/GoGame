@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class EnemyAI: ComplexEnemy
+public class Bird : ComplexEnemy
 {
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
@@ -74,19 +74,22 @@ public class EnemyAI: ComplexEnemy
             BirdsGFX.localScale = new Vector3(-1f, 1f, 1f);
     }
 
-    /* public override void takeDamage(int damageTaken)
+    public override void takeDamage(int damageTaken)
     {
         hp -= damageTaken;
         healthBar.value = hp;
-        /* if (hp > 0) anim.SetTrigger("damage");
-        else
-        {
-            anim.SetTrigger("death");
-            GetComponent<CapsuleCollider2D>().enabled = false;
+        //if (hp > 0) anim.SetTrigger("damage");
+        //else
+        //{
+        //anim.SetTrigger("death");
+        if (hp <= 0) {
+            GetComponent<CircleCollider2D>().enabled = false;
             this.enabled = false;
-        } //
+        }
+            
+        //} 
         
-        if (hp <= 0) this.enabled = false;
-        Destroy(gameObject);
-    } */
+        /*if (hp <= 0) this.enabled = false;
+        Destroy(gameObject);*/
+    } 
 }

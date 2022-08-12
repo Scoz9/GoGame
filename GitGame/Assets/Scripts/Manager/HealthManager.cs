@@ -7,7 +7,8 @@ public class HealthManager : MonoBehaviour
 {
     public static HealthManager instance;
 
-    public int health;
+    public int currentHealth;
+    public int maxHealth;
 
     public Image[] hearts;
     public Sprite fullHeart;
@@ -15,7 +16,8 @@ public class HealthManager : MonoBehaviour
 
     void Awake() {
 		instance = this;
-        health = 3;
+        maxHealth = 3;
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -23,7 +25,7 @@ public class HealthManager : MonoBehaviour
         foreach(Image img in hearts)
             img.sprite = emptyHeart;
         
-        for(int i = 0; i < health; i++)
+        for(int i = 0; i < currentHealth; i++)
             hearts[i].sprite = fullHeart;
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - Water
   - Goblin
   - EndLevel
+  - Bird
   layers:
   - Default
   - TransparentFX
