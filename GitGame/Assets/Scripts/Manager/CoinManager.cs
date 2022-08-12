@@ -13,7 +13,8 @@ public class CoinManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-        numberOfCoins = PlayerPrefs.GetInt("NumberOfCoins", 0);
+        numberOfCoins = SaveGame.GetCoins();
+        //numberOfCoins = PlayerPrefs.GetInt("NumberOfCoins", 0);
     }
 
     void FixedUpdate()

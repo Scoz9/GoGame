@@ -16,7 +16,7 @@ public static class SaveGame
     }
 
     public static int GetLevelUnlocked(){
-        return PlayerPrefs.GetInt("levelsUnlocked");
+        return PlayerPrefs.GetInt("levelsUnlocked",1);
     }
 
     public static void SetLevelUnlocked(int currentLevel){
@@ -40,7 +40,7 @@ public static class SaveGame
     }
 
     public static int GetLevelAt(){
-        return PlayerPrefs.GetInt("levelAt");
+        return PlayerPrefs.GetInt("levelAt",1);
     }
 
     public static void SetLevelCheckpoint(int level){
