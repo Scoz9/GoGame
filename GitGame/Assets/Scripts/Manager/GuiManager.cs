@@ -40,6 +40,16 @@ public class GuiManager : MonoBehaviour
     public void ReplayLevel()
     {
         Time.timeScale = 1;
+        MenuManager.load = true;
+        TimerController2.check = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void ReplayLevelCheckpoint()
+    {
+        Time.timeScale = 1;
+        MenuManager.load = false;
+        TimerController2.check = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -81,6 +91,7 @@ public class GuiManager : MonoBehaviour
 
     public void GoToNextLevel(int level)
     {
+        MenuManager.load = true;
         //Time.timeScale = 1;
         SceneManager.LoadScene(level);
     }

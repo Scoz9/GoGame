@@ -20,6 +20,7 @@ public class TimerController2 : MonoBehaviour
     private string HighscorePlayingStr;
     public int level;
 
+    public static bool check;
 
     private void Awake()
     {
@@ -29,78 +30,113 @@ public class TimerController2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeCounter.text = "Time: 00:00.00";
+        if(check == false)
+            timeCounter.text = "Time: 00:00.00";
+        if(check == true){
+            timeCounter.text = SaveGame.GetCheckpointTimer();
+        }
+    
         timerGoing = false;
+        
         if(level == 1)
-            highscoreText.text = PlayerPrefs.GetString("Highscore"); 
+            highscoreText.text = SaveGame.GetHighscore(); 
         else if(level == 2)
-            highscoreText.text = PlayerPrefs.GetString("Highscore2");  
+            highscoreText.text = SaveGame.GetHighscore2();   
     }
 
     public void BeginTimer(){
         timerGoing = true;
-        elapsedTime = 0f;
+
+        if(check == false){
+            elapsedTime = 0f;   
+        }
+        else if(check == true){
+            elapsedTime = SaveGame.GetCheckpointSeconds();
+        }
 
         startTime = Time.time;
         StartCoroutine(UpdateTimer());
     }
 
-   public void EndTimer(){
+      public void EndTimer(){
         timerGoing = false;
         
         if(level == 1){
-            Debug.Log("Level: " + 1);
-            if(PlayerPrefs.GetInt("HighscoreMinutes") == 0)
-                PlayerPrefs.SetInt("HighscoreMinutes", minutes);
-            if(PlayerPrefs.GetFloat("HighscoreSeconds") == 0) 
-                PlayerPrefs.SetFloat("HighscoreSeconds", seconds);
-            
-            if(minutes == PlayerPrefs.GetInt("HighscoreMinutes")){
-                if(seconds <= PlayerPrefs.GetFloat("HighscoreSeconds")){
-                    PlayerPrefs.SetFloat("HighscoreSeconds", seconds);
-                    PlayerPrefs.SetString("Highscore", HighscorePlayingStr);
+            if(SaveGame.GetHighscoreMinutes() == 0)
+                SaveGame.SetHighscoreMinutes(minutes);
+            if(SaveGame.GetHighscoreSeconds() == 0) 
+                SaveGame.SetHighscoreSeconds(seconds);
+
+            if(minutes == SaveGame.GetHighscoreMinutes()){
+                if(seconds <= SaveGame.GetHighscoreSeconds()){
+                    SaveGame.SetHighscoreSeconds(seconds);
+                    SaveGame.SetHighscore(HighscorePlayingStr);
                 }
-            } else if(minutes < PlayerPrefs.GetInt("HighscoreMinutes")){
-                PlayerPrefs.SetInt("HighscoreMinutes", minutes);
-                PlayerPrefs.SetFloat("HighscoreSeconds", seconds);
-                PlayerPrefs.SetString("Highscore", HighscorePlayingStr);
+            } else if(minutes < SaveGame.GetHighscoreMinutes()){
+                SaveGame.SetHighscoreMinutes(minutes);
+                SaveGame.SetHighscoreSeconds(seconds);
+                SaveGame.SetHighscore(HighscorePlayingStr);
             }
-            highscoreText.text = PlayerPrefs.GetString("Highscore");
+            
+            highscoreText.text = SaveGame.GetHighscore();
         }
         else if(level == 2){
-            Debug.Log("Level: " + 2);
-            if(PlayerPrefs.GetInt("HighscoreMinutes2") == 0)
-                PlayerPrefs.SetInt("HighscoreMinutes2", minutes);
-            if(PlayerPrefs.GetFloat("HighscoreSeconds2") == 0) 
-                PlayerPrefs.SetFloat("HighscoreSeconds2", seconds);
-            
-            if(minutes == PlayerPrefs.GetInt("HighscoreMinutes2")){
-                if(seconds <= PlayerPrefs.GetFloat("HighscoreSeconds2")){
-                    PlayerPrefs.SetFloat("HighscoreSeconds2", seconds);
-                    PlayerPrefs.SetString("Highscore2", HighscorePlayingStr);
+            if(SaveGame.GetHighscoreMinutes2() == 0)
+                SaveGame.SetHighscoreMinutes2(minutes);
+            if(SaveGame.GetHighscoreSeconds2() == 0) 
+                SaveGame.SetHighscoreSeconds2(seconds);
+        
+            if(minutes == SaveGame.GetHighscoreMinutes2()){
+                if(seconds <= SaveGame.GetHighscoreSeconds2()){
+                    SaveGame.SetHighscoreSeconds2(seconds);
+                    SaveGame.SetHighscore2(HighscorePlayingStr);
                 }
-            } else if(minutes < PlayerPrefs.GetInt("HighscoreMinutes2")){
-                PlayerPrefs.SetInt("HighscoreMinutes2", minutes);
-                PlayerPrefs.SetFloat("HighscoreSeconds2", seconds);
-                PlayerPrefs.SetString("Highscore2", HighscorePlayingStr);
+            } else if(minutes < SaveGame.GetHighscoreMinutes2()){
+                SaveGame.SetHighscoreMinutes2(minutes);
+                SaveGame.SetHighscoreSeconds2(seconds);
+                SaveGame.SetHighscore2(HighscorePlayingStr);
             }
-            highscoreText.text = PlayerPrefs.GetString("Highscore2");
+            highscoreText.text = SaveGame.GetHighscore2();
         }
         
+    }
+
+    public void CheckPointTimer(){
+            //L'errore sta qua sistemato qua dovrebbe funzionare
+
+            SaveGame.SetCheckpointMinutes(minutes);
+            if(seconds != 0)
+                SaveGame.SetCheckpointSeconds(seconds);
+            
+        
+            if(!string.IsNullOrEmpty(timePlayingStr))
+                SaveGame.SetCheckpointTimer(timePlayingStr);
+            
+            timePlayingStr = SaveGame.GetCheckpointTimer();
+            //check = false;
     }
 
     private IEnumerator UpdateTimer(){
         while(timerGoing){
             elapsedTime += Time.deltaTime;
+
             timePlaying = TimeSpan.FromSeconds(elapsedTime);
+
             timePlayingStr = "Time: " + timePlaying.ToString("mm':'ss'.'ff");
+
             HighscorePlayingStr = "Highscore: " + timePlaying.ToString("mm':'ss'.'ff");
             timeCounter.text = timePlayingStr;
 
-
             float t = Time.time - startTime;
+            
             minutes = ((int) t / 60);
-            seconds = t % 60;
+            seconds = elapsedTime;
+            //seconds = t % 60;
+
+            //if(check == true){
+                //Debug.Log("Dentro");
+                //seconds = elapsedTime;
+            //}
             
             yield return null;
         }

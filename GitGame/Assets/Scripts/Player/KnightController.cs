@@ -22,12 +22,20 @@ public class KnightController : MonoBehaviour
 
     private Animator anim;
     public static bool canMove;
+
+    private float checkPointPositionX, checkPointPositionY;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         canMove = false;
+
+        if(SaveGame.GetLevelCheckpoint() != 0){ 
+            if(SaveGame.GetCheckpointX()!= 0 && MenuManager.load == false){
+                transform.position = (new Vector2(SaveGame.GetCheckpointX(),SaveGame.GetCheckpointY()));
+            }
+        } 
     }
 
     void FixedUpdate()
@@ -85,6 +93,11 @@ public class KnightController : MonoBehaviour
 
         if(Input.GetKeyUp(KeyCode.Space))  //si attiva se lascio "space" prima della fine del tempo
             isJumping = false;
+    }
+
+    public void ReachedCheckPoint(float x, float y){
+        SaveGame.SetCheckpointX(x);
+        SaveGame.SetCheckpointY(y);
     }
 
 }
