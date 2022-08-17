@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Particles : MonoBehaviour
+public class Particles_healthPickup : MonoBehaviour
 {
     public ParticleSystem particles;
     public SpriteRenderer sprite;
-    public bool once = true;
+    private bool once = true;
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (HealthManager.instance.currentHealth == HealthManager.instance.maxHealth) return;
