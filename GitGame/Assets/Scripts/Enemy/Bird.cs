@@ -18,7 +18,7 @@ public class Bird : ComplexEnemy
     // Start is called before the first frame update
     void Start()
     {
-        hp = 10;
+        hp = 100;
         healthBar.value = hp;
 
         seeker = GetComponent<Seeker>();
@@ -69,9 +69,9 @@ public class Bird : ComplexEnemy
 
         //Fa ruotare la sprite nella direzione in cui si muove
         if (force.x >= 0.01f)
-            BirdsGFX.localScale = new Vector3(1f, 1f, 1f);
+            BirdsGFX.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         else if (force.x <= -0.01f)
-            BirdsGFX.localScale = new Vector3(-1f, 1f, 1f);
+            BirdsGFX.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
     }
 
     public override void takeDamage(int damageTaken)
@@ -85,6 +85,7 @@ public class Bird : ComplexEnemy
         if (hp <= 0) {
             GetComponent<CircleCollider2D>().enabled = false;
             this.enabled = false;
+            Destroy(gameObject);
         }
             
         //} 

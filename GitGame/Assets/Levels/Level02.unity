@@ -2494,6 +2494,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.582
       objectReference: {fileID: 0}
+    - target: {fileID: 1649239507, guid: 577cb79364c885d4f9000fbd9948d148, type: 3}
+      propertyPath: attackRange
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649239507, guid: 577cb79364c885d4f9000fbd9948d148, type: 3}
+      propertyPath: whatIsEnemies2.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 7789834157101490009, guid: 577cb79364c885d4f9000fbd9948d148, type: 3}
       propertyPath: m_Name
       value: Knight

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8441117339368738536}
   - component: {fileID: 465421355337531381}
   - component: {fileID: 7515048541848683194}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 2429064480669568648}
   - component: {fileID: 913394740628102391}
   - component: {fileID: 5893379713326090592}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1624964892382307829}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,9 +224,9 @@ GameObject:
   - component: {fileID: 4253749163630008714}
   - component: {fileID: 4253749163630008718}
   - component: {fileID: 4253749163630008719}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Bird
-  m_TagString: Enemy
+  m_TagString: Bird
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 4253749164770952476}
   - component: {fileID: 4253749164770952466}
   - component: {fileID: 4253749164770952467}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: BirdGFX
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 628716409096340737}
   - component: {fileID: 5605015227634427664}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +531,7 @@ GameObject:
   - component: {fileID: 8883087495296929756}
   - component: {fileID: 5796506642856336334}
   - component: {fileID: 6496458890354763718}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}

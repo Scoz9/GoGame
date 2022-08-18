@@ -2559,7 +2559,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470435954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.3596044, y: 4.6899996, z: -10}
+  m_LocalPosition: {x: -4.3771415, y: 4.6899996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4238,7 +4238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693664148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.3596044, y: 4.6899996, z: -10}
+  m_LocalPosition: {x: -4.3771415, y: 4.6899996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1476516470}
@@ -43354,6 +43354,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1229359188}
     m_Modifications:
+    - target: {fileID: 628716409096340737, guid: 27686fdba78c94b4799bca99a5d46c19, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 88.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2429064480669568648, guid: 27686fdba78c94b4799bca99a5d46c19, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -43406,9 +43410,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4253749163630008714, guid: 27686fdba78c94b4799bca99a5d46c19, type: 3}
+      propertyPath: m_Radius
+      value: 0.73446655
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253749163630008714, guid: 27686fdba78c94b4799bca99a5d46c19, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.22608948
+      objectReference: {fileID: 0}
     - target: {fileID: 4253749163630008715, guid: 27686fdba78c94b4799bca99a5d46c19, type: 3}
       propertyPath: m_Name
       value: Bird
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253749163630008718, guid: 27686fdba78c94b4799bca99a5d46c19, type: 3}
+      propertyPath: hp
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253749164770952466, guid: 27686fdba78c94b4799bca99a5d46c19, type: 3}
+      propertyPath: m_FlipX
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27686fdba78c94b4799bca99a5d46c19, type: 3}
@@ -45806,11 +45826,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2429064480669568648, guid: 27686fdba78c94b4799bca99a5d46c19, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2429064480669568648, guid: 27686fdba78c94b4799bca99a5d46c19, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4253749163630008712, guid: 27686fdba78c94b4799bca99a5d46c19, type: 3}
       propertyPath: m_RootOrder
@@ -45866,7 +45886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4253749163630008715, guid: 27686fdba78c94b4799bca99a5d46c19, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4253749163630008718, guid: 27686fdba78c94b4799bca99a5d46c19, type: 3}
       propertyPath: target
@@ -46209,6 +46229,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 542176815}
     m_Modifications:
+    - target: {fileID: 1649239507, guid: 577cb79364c885d4f9000fbd9948d148, type: 3}
+      propertyPath: attackRange
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649239507, guid: 577cb79364c885d4f9000fbd9948d148, type: 3}
+      propertyPath: whatIsEnemies2.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 7789834157101490009, guid: 577cb79364c885d4f9000fbd9948d148, type: 3}
       propertyPath: m_Name
       value: Knight

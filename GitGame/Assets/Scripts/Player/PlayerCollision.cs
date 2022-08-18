@@ -6,7 +6,7 @@ public class PlayerCollision : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.transform.tag == "Enemy" || collision.transform.tag == "Goblin") 
+        if(collision.transform.tag == "Enemy" || collision.transform.tag == "Goblin" || collision.transform.tag == "Bird") 
         {
             HealthManager.instance.currentHealth--;
             if(HealthManager.instance.currentHealth <= 0){

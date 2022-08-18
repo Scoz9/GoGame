@@ -13,6 +13,7 @@ public class PlayerAttack : MonoBehaviour
 
     public Transform attackPos;
     public LayerMask whatIsEnemies;
+    public LayerMask whatIsEnemies2;
     public float attackRange;
     public int damage;
     
@@ -28,7 +29,12 @@ public class PlayerAttack : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.C) && cooldownTimer > attackCooldown && playerMovement.canAttack())
         {
             Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
-            for (int i = 0; i < enemiesToDamage.Length; i++) enemiesToDamage[i].GetComponent<Goblin>().takeDamage(damage);
+            Collider2D[] enemiesToDamage2 = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies2);
+            for (int i = 0; i < enemiesToDamage.Length; i++) 
+                enemiesToDamage[i].GetComponent<Goblin>().takeDamage(damage);
+            for (int i = 0; i < enemiesToDamage2.Length; i++)
+                enemiesToDamage2[i].GetComponent<Bird>().takeDamage(damage);
+    
             Attack();
         }
         cooldownTimer += Time.deltaTime;
