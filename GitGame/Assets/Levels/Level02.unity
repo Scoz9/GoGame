@@ -36126,6 +36126,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bird
       objectReference: {fileID: 0}
+    - target: {fileID: 4253749163630008718, guid: 27686fdba78c94b4799bca99a5d46c19, type: 3}
+      propertyPath: speed
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253749163630008718, guid: 27686fdba78c94b4799bca99a5d46c19, type: 3}
+      propertyPath: movementDistance
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27686fdba78c94b4799bca99a5d46c19, type: 3}
 --- !u!4 &1443934209 stripped

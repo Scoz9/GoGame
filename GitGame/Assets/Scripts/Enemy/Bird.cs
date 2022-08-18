@@ -14,6 +14,7 @@ public class Bird : ComplexEnemy
     bool reachedEndOfPath = false;
     Seeker seeker;
     Rigidbody2D rb;
+    public int movementDistance;
 
     // Start is called before the first frame update
     void Start()
@@ -50,28 +51,38 @@ public class Bird : ComplexEnemy
 
     public override void Move()
     {
+        float distance2 = Vector2.Distance(rb.position, target.position);
+        //Debug.Log("distanceTarget" + distance2);
         if (path == null) return;
 
-        if (currentWaypoint >= path.vectorPath.Count) {
-            reachedEndOfPath = true;
-            return;
-        } else
-            reachedEndOfPath = false;
+        if(distance2 < movementDistance){
+            if (currentWaypoint >= path.vectorPath.Count) {
+                reachedEndOfPath = true;
+                return;
+            } else
+                reachedEndOfPath = false;
 
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        Vector2 force = direction * speed * Time.deltaTime;
+            Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+            Vector2 force = direction * speed * Time.deltaTime;
 
-        rb.AddForce(force);
-        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+            rb.AddForce(force);
+            float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
-        if (distance < nextWaypointDistance)
-            currentWaypoint++;
+            if (distance < nextWaypointDistance)
+                currentWaypoint++;
 
-        //Fa ruotare la sprite nella direzione in cui si muove
-        if (force.x >= 0.01f)
-            BirdsGFX.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-        else if (force.x <= -0.01f)
-            BirdsGFX.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
+            //Fa ruotare la sprite nella direzione in cui si muove **Da problemi di imprecisione!
+            /*if (force.x >= 0.01f)
+                BirdsGFX.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+            else if (force.x <= -0.01f)
+                BirdsGFX.localScale = new Vector3(-0.7f, 0.7f, 0.7f);*/
+            
+            if (target.position.x > transform.position.x)
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            else
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                
+        }
     }
 
     public override void takeDamage(int damageTaken)
