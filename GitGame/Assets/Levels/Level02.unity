@@ -2878,7 +2878,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2059161066}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &407379577
 MonoBehaviour:
@@ -33887,6 +33887,82 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 79170664622417852, guid: d9fe9a58148576f5a8b2c8f2f5f55dce, type: 3}
   m_PrefabInstance: {fileID: 1118533704}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1119318194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1119318195}
+  - component: {fileID: 1119318196}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1119318195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119318194}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -98.619, y: -4.608, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2059161066}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1119318196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119318194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20b789e5237dc42d09025a62714ecb19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicMixerGroup: {fileID: 3483940465531438305, guid: 28451c5b8ff1d2296af1dff4a5c84e30, type: 2}
+  soundEffectsMixerGroup: {fileID: -5003225733536533296, guid: 28451c5b8ff1d2296af1dff4a5c84e30, type: 2}
+  sounds:
+  - audioType: 0
+    source: {fileID: 0}
+    name: GameOver
+    audioClip: {fileID: 8300000, guid: bef5db9fe9baf454eb393148dfbb53af, type: 3}
+    isLoop: 0
+    playOnAwake: 0
+    volume: 1
+  - audioType: 0
+    source: {fileID: 0}
+    name: Coins
+    audioClip: {fileID: 8300000, guid: 41112fd85bac1e1afa5c0bf95bf7d10f, type: 3}
+    isLoop: 0
+    playOnAwake: 0
+    volume: 0.5
+  - audioType: 0
+    source: {fileID: 0}
+    name: FirstJump
+    audioClip: {fileID: 8300000, guid: 525f32f3ae5a019a294eb416743585da, type: 3}
+    isLoop: 0
+    playOnAwake: 0
+    volume: 1
+  - audioType: 1
+    source: {fileID: 0}
+    name: Soundtrack
+    audioClip: {fileID: 8300000, guid: 1a6b6e9fe252662f883e4e447735060d, type: 3}
+    isLoop: 1
+    playOnAwake: 1
+    volume: 1
+  musicSlider: {fileID: 0}
+  effectsSlider: {fileID: 0}
 --- !u!1001 &1124978914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37931,85 +38007,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1621777673
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1621777674}
-  - component: {fileID: 1621777675}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1621777674
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1621777673}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -98.619, y: -4.608, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2059161066}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1621777675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1621777673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20b789e5237dc42d09025a62714ecb19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: GameOver
-    clip: {fileID: 8300000, guid: bef5db9fe9baf454eb393148dfbb53af, type: 3}
-    mixer: {fileID: 24300002, guid: 28451c5b8ff1d2296af1dff4a5c84e30, type: 2}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Coins
-    clip: {fileID: 8300000, guid: 41112fd85bac1e1afa5c0bf95bf7d10f, type: 3}
-    mixer: {fileID: 24300002, guid: 28451c5b8ff1d2296af1dff4a5c84e30, type: 2}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: FirstJump
-    clip: {fileID: 8300000, guid: 9c36a087a9f39213da244f07370e0f3f, type: 3}
-    mixer: {fileID: 24300002, guid: 28451c5b8ff1d2296af1dff4a5c84e30, type: 2}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Soundtrack
-    clip: {fileID: 8300000, guid: 1a6b6e9fe252662f883e4e447735060d, type: 3}
-    mixer: {fileID: 24300002, guid: 28451c5b8ff1d2296af1dff4a5c84e30, type: 2}
-    volume: 1
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    mixer: {fileID: 0}
-    volume: 0
-    pitch: 0
-    loop: 0
-    source: {fileID: 0}
 --- !u!1 &1630504996
 GameObject:
   m_ObjectHideFlags: 0
@@ -41934,8 +41931,8 @@ Transform:
   m_Children:
   - {fileID: 734998812}
   - {fileID: 693984852}
-  - {fileID: 1621777674}
   - {fileID: 407379576}
+  - {fileID: 1119318195}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

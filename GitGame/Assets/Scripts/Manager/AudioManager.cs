@@ -1,23 +1,45 @@
+
 using System;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour {
 
 	public static AudioManager instance;
 
-	public Sound[] sounds;
+	[SerializeField] private AudioMixerGroup musicMixerGroup;
+	[SerializeField] private AudioMixerGroup soundEffectsMixerGroup;
+	[SerializeField] private Sound[] sounds;
+	public Slider musicSlider;
+	public Slider effectsSlider;
 
 	void Awake ()
 	{
 		instance = this;
-		
+	
 		foreach (Sound s in sounds) {
 			s.source = gameObject.AddComponent<AudioSource>();
-			s.source.clip = s.clip;
-			s.source.outputAudioMixerGroup = s.mixer;
+			s.source.clip = s.audioClip;
+			s.source.loop = s.isLoop;
 			s.source.volume = s.volume;
-			s.source.pitch = s.pitch;
-			s.source.loop = s.loop;
+			
+			switch(s.audioType)
+			{
+				case Sound.AudioTypes.soundEffect:
+					s.source.outputAudioMixerGroup = soundEffectsMixerGroup;
+					break;
+				
+				case Sound.AudioTypes.music:
+					s.source.outputAudioMixerGroup = musicMixerGroup;
+					break;
+
+			}
+
+			if(s.playOnAwake){
+				s.source.Play();
+			}
+			
 		}
 	}
 
@@ -29,5 +51,10 @@ public class AudioManager : MonoBehaviour {
 	public void Stop(string sound) {
 		Sound s = Array.Find(sounds, item => item.name == sound);
 		s.source.Stop();
+	}
+
+	public void UpdateMixerVolume(){
+		musicMixerGroup.audioMixer.SetFloat("Music Volume", Mathf.Log10(AudioOptionsManager.musicVolume)*20);
+		soundEffectsMixerGroup.audioMixer.SetFloat("Sound Effects Volume", Mathf.Log10(AudioOptionsManager.soundEffectsVolume)*20);
 	}
 }

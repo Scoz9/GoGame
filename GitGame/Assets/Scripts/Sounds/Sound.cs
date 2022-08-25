@@ -4,20 +4,15 @@ using UnityEngine.Audio;
 [System.Serializable]
 public class Sound {
 
-	public string name;
+	public enum AudioTypes{soundEffect,music}
+	public AudioTypes audioType;
 
-	public AudioClip clip;
-	public AudioMixerGroup mixer;
+	[HideInInspector] public AudioSource source;
+	public string name;
+	public AudioClip audioClip;
+	public bool isLoop;
+	public bool playOnAwake;
 
 	[Range(0f, 1f)]
-	public float volume = 1;
-
-	[Range(-3f, 3f)]
-	public float pitch = 1;
-
-	public bool loop = false;
-
-	[HideInInspector]
-	public AudioSource source;
-
+	public float volume = 0.5f;	
 }

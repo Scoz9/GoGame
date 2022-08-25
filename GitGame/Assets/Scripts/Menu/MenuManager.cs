@@ -8,23 +8,26 @@ using UnityEngine.Audio;
 
 public class MenuManager : MonoBehaviour
 {
-    public Slider volumeSlider;
     public AudioMixer mixer;
     private float value;
     public static bool load;
 
     public void Start()
     {
-        mixer.GetFloat("volume",out value); //value deve essere passata con la keyword out
-        volumeSlider.value = value;
+        if(AudioOptionsManager.musicVolume == 0)
+			AudioManager.instance.musicSlider.value =  1;
+		else if(AudioOptionsManager.musicVolume != 0){
+			AudioManager.instance.musicSlider.value =  AudioOptionsManager.musicVolume;
+        }        
+
+        if(AudioOptionsManager.soundEffectsVolume == 0)
+           AudioManager.instance.effectsSlider.value = 1;
+		else if(AudioOptionsManager.soundEffectsVolume != 0)
+			AudioManager.instance.effectsSlider.value =  AudioOptionsManager.soundEffectsVolume;
+
         load = true;
     }
     
-    public void SetVolume() 
-    {
-        mixer.SetFloat("volume", volumeSlider.value);
-    }
-
     public void LoadLevel(int index) 
     {
         Time.timeScale = 1;
