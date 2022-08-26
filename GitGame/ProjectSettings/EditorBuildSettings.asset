@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Levels/Level02.unity
     guid: aed74bb9cbbdb054c88808e3bffe5496
   - enabled: 1
-    path: Assets/Levels/Level03.unity
+    path: Assets/Levels/Credit_screen.unity
     guid: a75504eeb21aeb054a923ff4e21fb5af
   m_configObjects: {}
