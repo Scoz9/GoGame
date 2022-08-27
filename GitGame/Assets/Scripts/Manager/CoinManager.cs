@@ -11,16 +11,13 @@ public class CoinManager : MonoBehaviour
     
     // Start is called before the first frame update
     void Awake()
-    {
+    {  
         instance = this;
         numberOfCoins = SaveGame.GetCoins();
-        //numberOfCoins = PlayerPrefs.GetInt("NumberOfCoins", 0);
     }
 
     void FixedUpdate()
     {
-        //SaveGame.SaveCoins(100);
-        //numberOfCoins = SaveGame.GetCoins();
         RenderCoins();
     }
 
@@ -29,19 +26,4 @@ public class CoinManager : MonoBehaviour
         coinsText.text = numberOfCoins.ToString();
     }
 
-    /*public void SaveCoins()
-    {
-        SaveGame.SaveCoins(coins);
-    }*/
-
-    /*public bool RemoveMoney(int moneyToRemove)
-    {
-        if (moneyToRemove > coins)
-        {
-            return false;
-        }
-        coins -= moneyToRemove;
-        RenderCoins();
-        return true;
-    }*/
 }
