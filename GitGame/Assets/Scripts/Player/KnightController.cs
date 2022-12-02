@@ -1,4 +1,3 @@
-using System.Security.Cryptography;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,46 +21,49 @@ public class KnightController : MonoBehaviour
     public float jumpTime;
 
     private Animator anim;
-
+    public static bool canMove;
     
     void Start()
     {
-        //Grab references for rigidbody and animator from object
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        canMove = false;
     }
 
     void FixedUpdate()
     {
-        moveInput = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        if(canMove){
+            moveInput = Input.GetAxisRaw("Horizontal");
+            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        }
     }
 
     void Update(){
-        
         KnightMovementRL(moveInput);
         KinghtJump();
-        //KnightSlide();
         
         //Set animator parameters
         anim.SetBool("run", moveInput != 0);
         anim.SetBool("grounded", !isJumping);
-        //anim.SetBool("slide", )
     }
 
-    public void KnightMovementRL(float moveInput){
-        if(moveInput > 0){
+    public void KnightMovementRL(float moveInput)
+    {
+        if(moveInput > 0)
             transform.eulerAngles = new Vector3(0,0,0); //cavaliere guarda a destra
-        } else if(moveInput < 0){
+        else if(moveInput < 0)
             transform.eulerAngles = new Vector3(0,180,0); //cavaliere guarda a sinistra
-        }
     }
 
-    public void KinghtJump(){
+    public bool canAttack() { return moveInput == 0 && isGrounded;}
+
+    public void KinghtJump()
+    {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
 
         //Se il player è sul pavimento e viene cliccato lo space -> isJumping(sta saltando) ... 
-        if(Input.GetKeyDown(KeyCode.Space) && isGrounded == true ){
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded == true )
+        {
             isJumping = true;
             jumpTimeCounter = jumpTime;
             rb.velocity = Vector2.up * jumpForce;
@@ -69,8 +71,10 @@ public class KnightController : MonoBehaviour
         }
 
         //Se il player sta saltando ed lo spazio è premuto, continuerà a saltare per il tempo assegnato 
-        if(Input.GetKey(KeyCode.Space) && isJumping == true){
-            if(jumpTimeCounter > 0){
+        if(Input.GetKey(KeyCode.Space) && isJumping == true)
+        {
+            if(jumpTimeCounter > 0)
+            {
                 rb.velocity = Vector2.up * jumpForce;
                 jumpTimeCounter -= Time.deltaTime;
             }
@@ -79,9 +83,8 @@ public class KnightController : MonoBehaviour
             
         }
 
-        if(Input.GetKeyUp(KeyCode.Space)){  //si attiva se lascio "space" prima della fine del tempo
+        if(Input.GetKeyUp(KeyCode.Space))  //si attiva se lascio "space" prima della fine del tempo
             isJumping = false;
-        }
     }
 
 }

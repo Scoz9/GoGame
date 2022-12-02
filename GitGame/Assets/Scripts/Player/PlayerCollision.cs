@@ -6,34 +6,39 @@ public class PlayerCollision : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.transform.tag == "Enemy") // 
+        if(collision.transform.tag == "Enemy" || collision.transform.tag == "Goblin") 
         {
-            HealthManager.health--;
-            if(HealthManager.health <= 0){
-                PlayerManager.isGameOver = true;
+            HealthManager.instance.health--;
+            if(HealthManager.instance.health <= 0){
+                GuiManager.instance.isGameOver = true;
                 AudioManager.instance.Play("GameOver");
-                gameObject.SetActive(false);
-                
-            } else  {
+                gameObject.SetActive(false); 
+            } else 
                 StartCoroutine(GetHurt());
-            }
-        }
-        if(collision.transform.tag == "Water")
+        } else if(collision.transform.tag == "Water")
         {
-            HealthManager.health = 0;
-            PlayerManager.isGameOver = true;
+            HealthManager.instance.health = 0;
+            GuiManager.instance.isGameOver = true;
             AudioManager.instance.Play("GameOver");
+            gameObject.SetActive(false);
+        }
+        else if(collision.transform.tag == "EndLevel")
+        {
+            GuiManager.instance.LevelPassed();
+            GuiManager.instance.isWinOver = true;
+            TimerController2.instance.EndTimer();
+            //AudioManager.instance.Play("GameOver");
             gameObject.SetActive(false);
         }
 
     }
-
+    
     IEnumerator GetHurt()
     {
-        Physics2D.IgnoreLayerCollision(3,8);
+        //Physics2D.IgnoreLayerCollision(3,8);
         GetComponent<Animator>().SetLayerWeight(1,1);
         yield return new WaitForSeconds(2);
         GetComponent<Animator>().SetLayerWeight(1,0);
-        Physics2D.IgnoreLayerCollision(3,8, false);
+        //Physics2D.IgnoreLayerCollision(3,8, false);
     }
 }

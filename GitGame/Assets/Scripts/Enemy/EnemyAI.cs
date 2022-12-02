@@ -16,6 +16,7 @@ public class EnemyAI: MonoBehaviour
     bool reachedEndOfPath = false;
     Seeker seeker;
     Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,13 +47,13 @@ public class EnemyAI: MonoBehaviour
         if(path == null)
             return;
         
-        if(currentWaypoint >= path.vectorPath.Count){
+        if(currentWaypoint >= path.vectorPath.Count)
+        {
             reachedEndOfPath = true;
             return;
-        } else {
+        } else 
             reachedEndOfPath = false;
-        }
-
+        
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = direction * speed * Time.deltaTime;
 
