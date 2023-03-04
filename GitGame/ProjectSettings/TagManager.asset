@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Water
+  - Goblin
+  - EndLevel
+  - Bird
   layers:
   - Default
   - TransparentFX
@@ -16,8 +19,8 @@ TagManager:
   - Ground
   - Foreground
   - Enemy
-  - 
-  - 
+  - Goblin
+  - Bird
   - 
   - 
   - 

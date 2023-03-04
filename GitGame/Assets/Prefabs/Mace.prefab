@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4776176542103556634}
   - component: {fileID: 4776176542103556633}
   - component: {fileID: 1225273881}
-  - component: {fileID: 1845775194}
   m_Layer: 8
   m_Name: Mace
   m_TagString: Enemy
@@ -143,26 +142,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df97d3afa07c7d69282f3bb9cd971a75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 3
   range: 5
---- !u!50 &1845775194
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4776176542103556638}
-  m_BodyType: 0
-  m_Simulated: 0
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
