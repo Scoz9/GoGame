@@ -1,0 +1,63 @@
+Digital game development project
+
+1. General Settings (two different mandatory elements)
+    • Build mobile: 1pt
+    • Splash Screen: ½ pt 			                                          [Did it!]
+    • Game icons: ½ pt					                                          [Did it!]
+			
+2. Main menu (two different mandatory elements)
+    • Load Game (checkpoint in the middle of a level): 2pt              -> [Checkpoint.cs]  
+    • Options:
+        ◦ Sound/Music: 1pt 						                                  -> [AudioManager.cs, Sound.cs]
+        ◦ Controls (possibility to change the default commands): 2pt
+        ◦ Resolution/Quality: ½pt  					                            -> [MenuManager.cs]
+
+3. Credits Screen: ½ pt 		                                              [Did it!]					
+       
+4. Game ranking
+    • Ordered: 2pt
+    • With dynamic entry replacementy (deleting the lowest score and entering a new one): 2pt
+    • Unordered: 1pt
+      
+5. Tutorial (optional)
+    • Static screen (3 max): ½pt per screen			                         -> (1) Menu → Tutorial Button
+      
+6. Gameplay (three different mandatory elements)
+    • Score: 1pt 					                                                -> [TimerController2.cs]
+    • PowerUp/Shop/Bonus player (Max 3): 1pt every powerup	 	            -> (1) [Particles_healtPickup.cs]
+    • Timed game: ½pt 					                                          -> [TimerController2.cs]
+    • Presenza di nemici/sfida: 1pt 					→ [cartella script: Enemy]
+        ◦ Livelli di difficoltà: 1pt
+        ◦ Difficoltà crescente: 1pt 					
+        ◦ Al base: 1pt 							→ [Goblin.cs]
+        ◦ Al complicata: 3pt 						→ [Bird.cs]
+        ◦ Multiplayer Locale (2 o più player nello stesso dispositivo): 2pt
+
+7. Strutture (8 elementi diversi obbligatori)
+    • PlayerPrefs: ½pt 						→ (15) [SaveGame.cs]
+    • Singleton (4 max): 1pt ogni singleton 				→ (5) [AudioManager.cs, HealtManager.cs, GuiManager.cs, CoinManager.cs, TimerController2.cs]
+    • Coroutines (4 max): 1/2pt ogni coroutine 			→ (3) [TimerController2.cs, CountDownController.cs, PlayerCollision.cs]
+    • Enums: ½pt 							→ (1) [Sound.cs] 
+    • Classi statiche (2 max): ½pt ogni classe 			→ (1) [SaveGame.cs]
+    • Generics(anche interfacce): 2pt 				→ (1) [IDamageable.cs] 
+    • Method overload: ½pt 						→ (1) [MenuManager.cs] 
+    • Presenza di ereditarietà: 1pt 						
+      [ComplexEnemy.cs, SimpleEnemy.cs]
+        ◦ Overriding: ½pt 						→ (2) [Bird.cs, Goblin, Enemy_sideways, Mace] metodo “move” e “TakeDamage”
+    • Interfacce (2 max): 1pt 					→ (2) [IDamageable.cs, IMovable.cs]
+    • ExtensionMethods (4 max): 1/2pt ogni metodo
+    • Delegates: 1pt
+ 
+8. Animazioni originali (2 max): ½pt ogni animazione 		→ (3) [Goblin→Idle, Chain→chain, Mace→Blink]
+	
+9. Sound
+    • Soundtrack: ½pt 							→ [Soundtrack.cs]
+    • Altri suoni (3 max): ½pt ogni suono 				→ (3) [Coin, Jump, GameOver]
+
+10. Raycast: 1pt 								→ (2) [Goblin.cs]
+
+11. User Interface (max 6): ½ pt ogni elemento grafico (nei livelli di gioco, non nel main menu) → (8)	
+       [Coin, Vita, Timer,Highscore, Pausa, Countdown, Barra vita goblin, Barra vita uccello]
+
+12. Extra
+    • Particelle (max 3): ½pt ogni sistema di particelle 			→ (3) [EndLevel, HealthPickup, Checkpoint]
