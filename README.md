@@ -1,2 +1,2 @@
-# GameName
-Free-game project, let's do that!
+# GoGame
+2D platform game! 
